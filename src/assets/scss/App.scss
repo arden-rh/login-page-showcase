@@ -1,0 +1,14 @@
+@import "bootstrap/scss/bootstrap";
+
+@import 'starships';
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0.75em;
+}
+
+#App {
+	background-color: #5a5a5a;
+	color: #ffffff;
+	min-height: 100vh;
+}
+
