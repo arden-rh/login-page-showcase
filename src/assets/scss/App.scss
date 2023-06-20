@@ -1,14 +1,24 @@
 @import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Source+Code+Pro:wght@300;400;500;600&display=swap');
+
+/* Config variables */
+@import 'config';
 
 @import 'starships';
 
-h1, h2, h3, h4, h5, h6 {
-	margin-bottom: 0.75em;
+h1 {
+	font-family: $primary-font;
+	letter-spacing: 0.2rem;
+	margin: 2rem 0;
+}
+
+html {
+	background-color: $color-background;
 }
 
 #App {
-	background-color: #5a5a5a;
-	color: #ffffff;
+	background-color: $color-background;
+	color: $color-white;
 	min-height: 100vh;
 }
 

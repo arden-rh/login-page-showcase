@@ -6,16 +6,18 @@ import Alert from "react-bootstrap/Alert"
 
 const StarshipsPage = () => {
 
-	const { data, isError, status } = useQuery(['starships'], getStarships)
+	const { data, isError, isLoading, status } = useQuery(['starships'], getStarships)
 
 	return (
-		<>
+		<div className="starships-page">
 			<h1>Starships Page</h1>
 
 			{isError && <Alert variant="warning">Error: Something went wrong</Alert>}
 
+			{isLoading && <Alert variant="secondary">Loading...</Alert>}
+
 			{data && <TableComponent starshipData={data.results} />}
-		</>
+		</div>
 	)
 }
 

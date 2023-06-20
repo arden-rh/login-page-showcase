@@ -8,3 +8,8 @@ export type Starship = {
 	model: string
 	manufacturer: string
 }
+
+export type User = {
+	username: string
+	password: string
+}
