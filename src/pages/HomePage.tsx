@@ -1,9 +1,9 @@
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
 import Form from "react-bootstrap/Form"
-import React, { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from "react"
 import { loginUser } from "../services/UserAPI"
+import { useNavigate } from "react-router-dom"
 import { User } from "../types"
 
 interface IProps {
@@ -39,7 +39,6 @@ const HomePage: React.FC<IProps> = ({ loggedIn }) => {
 
 			loggedIn()
 
-			console.log(loggedInUser)
 		} catch (e: any) {
 			setError(e.toString())
 			return
