@@ -1,12 +1,13 @@
 import { useQuery } from "@tanstack/react-query"
-import TableComponent from '../components/TableComponent'
 import { getStarships } from "../services/SWAPI"
-
 import Alert from "react-bootstrap/Alert"
+import React from 'react'
+import TableComponent from "../components/TableComponent"
+
 
 const StarshipsPage = () => {
 
-	const { data, isError, isLoading, status } = useQuery(['starships'], getStarships)
+	const { data, isError, isLoading } = useQuery(['starships'], getStarships)
 
 	return (
 		<div className="starships-page">
