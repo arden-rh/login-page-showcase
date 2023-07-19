@@ -1,19 +1,51 @@
-import React, { useEffect, useState } from "react"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
 import Form from "react-bootstrap/Form"
+import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { loginUser } from "../services/UserAPI"
+import { User } from "../types"
 
-const HomePage = () => {
+interface IProps {
+	loggedIn: () => void
+}
 
-	const [inputUsername, setInputUsername] = useState("")
+const HomePage: React.FC<IProps> = ({ loggedIn }) => {
+
+	const [userEmail, setUserEmail] = useState("")
 	const [password, setPassword] = useState("")
+	const [error, setError] = useState<string | null>(null)
 	const navigate = useNavigate()
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
 
-		// navigate(`/starships`)
+		const user: User = {
+			email: userEmail,
+			password: password
+		}
+
+		handleLoginUser(user)
+	}
+
+	const handleLoginUser = async (user: User) => {
+
+		try {
+			const loggedInUser = await loginUser(user)
+
+			if (!loggedInUser.accessToken) {
+				throw new Error("Something went wrong")
+			}
+
+			loggedIn()
+
+			console.log(loggedInUser)
+		} catch (e: any) {
+			setError(e.toString())
+			return
+		}
+
+		navigate(`/starships`)
 	}
 
 	return (
@@ -26,16 +58,16 @@ const HomePage = () => {
 						Enter your username and password
 					</Card.Text>
 					<Form onSubmit={handleSubmit}>
-						<Form.Group className="mb-3" controlId="username">
-							<Form.Label>Username</Form.Label>
+						<Form.Group className="mb-3" controlId="email">
+							<Form.Label>Email</Form.Label>
 							<Form.Control
 								onChange={(e) =>
-									setInputUsername(e.target.value)
+									setUserEmail(e.target.value)
 								}
-								placeholder="Enter your username..."
+								placeholder="Enter your email..."
 								required
-								type="text"
-								value={inputUsername}
+								type="email"
+								value={userEmail}
 							/>
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="password">
@@ -50,11 +82,12 @@ const HomePage = () => {
 								value={password}
 							/>
 						</Form.Group>
+						{error && <Card.Text>{error}</Card.Text>}
 						<div className="d-flex justify-content-between">
 							<Button
 								variant="success"
 								type="submit"
-								disabled={!inputUsername || !password}
+								disabled={!userEmail || !password}
 							>
 								Login
 							</Button>

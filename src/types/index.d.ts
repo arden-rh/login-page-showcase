@@ -10,6 +10,11 @@ export type Starship = {
 }
 
 export type User = {
-	username: string
+	email: string
 	password: string
+}
+
+export type loggedInUser = {
+	accessToken: string
+	user: Omit<User, "password"> & { id: number}
 }
