@@ -26,11 +26,11 @@ const StarshipsPage = () => {
 			<Link
 				className='return-btn'
 				onClick={(e) => {
-					e.preventDefault();
-					navigate(`/`);
+					e.preventDefault()
+					navigate(`/`)
 				}}
 				to={`/`}>
-				<Button variant='light'>Return to the Home Page</Button>
+				<Button variant='light'>Return to the Home Page and Logout</Button>
 			</Link>
 		</div>
 	)

@@ -2,8 +2,7 @@
 	div {
 		display: flex;
 		justify-content: center;
-		padding: 2rem;
-		margin-bottom: 2rem;
+		margin-bottom: 0.6rem;
 
 		table {
 			border-collapse: separate;
@@ -24,6 +23,8 @@
 		div {
 			border: 1px solid;
 			border-radius: 15px;
+			margin-bottom: 2rem;
+			padding: 0.8rem 1.2rem 1rem;
 
 			table {
 				border-spacing: 0.8rem 1.2rem;
