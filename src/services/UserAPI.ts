@@ -17,3 +17,9 @@ export const loginUser = async (data: User) => {
 	return response.data as loggedInUser
 }
 
+/** POST create user request */
+export const createUser = async (data: User) => {
+	const response = await axios.post(`${BASE_URL}/users`, data)
+	return response.data as loggedInUser
+}
+
