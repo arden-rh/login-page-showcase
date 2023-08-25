@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ResourceData } from '../types'
+import { ResourceData } from '../types/SWAPI.types'
 
 // Create a new axios instance
 const instance = axios.create({

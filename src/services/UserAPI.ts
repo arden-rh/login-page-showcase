@@ -1,6 +1,5 @@
 import axios from 'axios'
-import { User, loggedInUser } from '../types'
-
+import { User, LoggedInUser } from '../types/User.types'
 const BASE_URL = "http://localhost:3000"
 
 /**
@@ -14,12 +13,12 @@ export const getUsers = async () => {
 /** POST user login request */
 export const loginUser = async (data: User) => {
 	const response = await axios.post(`${BASE_URL}/login`, data)
-	return response.data as loggedInUser
+	return response.data as LoggedInUser
 }
 
 /** POST create user request */
 export const createUser = async (data: User) => {
 	const response = await axios.post(`${BASE_URL}/users`, data)
-	return response.data as loggedInUser
+	return response.data as LoggedInUser
 }
 

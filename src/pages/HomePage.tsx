@@ -1,11 +1,11 @@
+import { createUser, loginUser } from "../services/UserAPI"
+import { useNavigate } from "react-router-dom"
+import { User } from "../types/SWAPI.types"
 import Alert from "react-bootstrap/Alert"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
 import Form from "react-bootstrap/Form"
 import React, { useEffect, useState } from "react"
-import { createUser, loginUser } from "../services/UserAPI"
-import { useNavigate } from "react-router-dom"
-import { User } from "../types"
 
 interface IProps {
 	loggedIn: () => void

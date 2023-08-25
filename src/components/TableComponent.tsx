@@ -4,7 +4,7 @@ import {
 	getCoreRowModel,
 	useReactTable,
 } from "@tanstack/react-table"
-import { Starship } from "../types"
+import { Starship } from "../types/SWAPI.types"
 import React, { useState } from "react"
 
 const columnHelper = createColumnHelper<Starship>()
