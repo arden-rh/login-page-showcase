@@ -1,38 +1,13 @@
 .starships-page {
 	div {
-		display: flex;
-		justify-content: center;
-		margin-bottom: 0.6rem;
+		padding: 20px 0px;
 
-		table {
-			border-collapse: separate;
-			border-spacing: 0.6rem 1.2rem;
-			font-family: $secondary-font;
-
-			td {
-				border: 1px solid;
-				border-radius: 5px;
-				padding: 0.2rem;
-			}
+		.table {
+			margin: 0;
 		}
 	}
-}
 
-@media screen and (min-width: 768px) {
-	.starships-page {
-		div {
-			border: 1px solid;
-			border-radius: 15px;
-			margin-bottom: 2rem;
-			padding: 0.8rem 1.2rem 1rem;
-
-			table {
-				border-spacing: 0.8rem 1.2rem;
-
-				td {
-					padding: 0.4rem 1rem;
-				}
-			}
-		}
+	p {
+		padding: 20px 0;
 	}
 }

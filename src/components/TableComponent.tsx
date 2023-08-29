@@ -6,6 +6,7 @@ import {
 } from "@tanstack/react-table"
 import { Starship } from "../types/SWAPI.types"
 import React, { useState } from "react"
+import Table from 'react-bootstrap/Table'
 
 const columnHelper = createColumnHelper<Starship>()
 
@@ -28,8 +29,8 @@ interface IProps {
 	starshipData: Starship[]
 }
 
-const TableComponent: React.FC<IProps> = ({ starshipData }) => {
-	const [data, setData] = useState<Starship[]>(starshipData)
+const TableComponent: React.FC<IProps> = ({ starshipData: data }) => {
+	// const [data, setData] = useState<Starship[]>(starshipData)
 
 	const table = useReactTable({
 		data,
@@ -37,13 +38,13 @@ const TableComponent: React.FC<IProps> = ({ starshipData }) => {
 		getCoreRowModel: getCoreRowModel()
 	})
 
-	return <div>
-		<table>
+	return (
+		<Table striped bordered hover responsive size="sm">
 			<thead>
 				{table.getHeaderGroups().map((headerGroup) => (
 					<tr key={headerGroup.id}>
 						{headerGroup.headers.map((header) => (
-							<th key={header.id}>
+							<th key={header.id} colSpan={header.colSpan}>
 								{header.isPlaceholder
 									? null
 									: flexRender(
@@ -66,8 +67,7 @@ const TableComponent: React.FC<IProps> = ({ starshipData }) => {
 					</tr>
 				))}
 			</tbody>
-		</table>
-	</div>
-}
+		</Table>
+)}
 
 export default TableComponent

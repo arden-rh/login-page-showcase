@@ -1,4 +1,3 @@
-import Alert from "react-bootstrap/Alert"
 import Button from 'react-bootstrap/Button'
 import React from 'react'
 import TableComponent from "../components/TableComponent"
@@ -17,9 +16,9 @@ const StarshipsPage = () => {
 		<div className="starships-page">
 			<h1>Starships Page</h1>
 
-			{isError && <Alert variant="warning">Error: Something went wrong</Alert>}
+			{isError && <p className="error">Error: Something went wrong</p>}
 
-			{isLoading && <Alert variant="secondary">Loading...</Alert>}
+			{isLoading && <p className="loading">Loading...</p>}
 
 			{data && <TableComponent starshipData={data.results} />}
 
@@ -29,7 +28,8 @@ const StarshipsPage = () => {
 					e.preventDefault()
 					navigate(`/`)
 				}}
-				to={`/`}>
+				to={`/`}
+			>
 				<Button variant='light'>Return to the Home Page and Logout</Button>
 			</Link>
 		</div>
