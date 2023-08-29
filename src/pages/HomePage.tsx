@@ -1,6 +1,6 @@
 import { createUser, loginUser } from "../services/UserAPI"
 import { useNavigate } from "react-router-dom"
-import { User } from "../types/SWAPI.types"
+import { User } from "../types/User.types"
 import Alert from "react-bootstrap/Alert"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
