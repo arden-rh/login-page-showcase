@@ -5,11 +5,15 @@ import {
 	useReactTable,
 } from "@tanstack/react-table"
 import { Starship } from "../types/SWAPI.types"
-import React, { useState } from "react"
+import React from "react"
 import Table from 'react-bootstrap/Table'
 
+/**
+ * Creating a Column Helper to Tanstack Table based on the Starhip Type
+*/
 const columnHelper = createColumnHelper<Starship>()
 
+// Columns
 const columns = [
 	columnHelper.accessor("name", {
 		header: "Name",
@@ -24,13 +28,11 @@ const columns = [
 		cell: (info) => info.getValue()
 	})
 ]
-
 interface IProps {
 	starshipData: Starship[]
 }
 
 const TableComponent: React.FC<IProps> = ({ starshipData: data }) => {
-	// const [data, setData] = useState<Starship[]>(starshipData)
 
 	const table = useReactTable({
 		data,

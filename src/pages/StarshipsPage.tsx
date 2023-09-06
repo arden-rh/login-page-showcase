@@ -1,9 +1,9 @@
+import { getStarships } from "../services/SWAPI"
+import { Link, useNavigate } from 'react-router-dom'
+import { useQuery } from "@tanstack/react-query"
 import Button from 'react-bootstrap/Button'
 import React from 'react'
 import TableComponent from "../components/TableComponent"
-import { useQuery } from "@tanstack/react-query"
-import { getStarships } from "../services/SWAPI"
-import { Link, useNavigate } from 'react-router-dom'
 
 
 const StarshipsPage = () => {

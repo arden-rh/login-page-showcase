@@ -1,3 +1,5 @@
+/** SWAPI Types */
+
 export type ResourceData = {
 	count: number
 	results: Starship[]

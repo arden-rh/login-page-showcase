@@ -1,7 +1,7 @@
-import axios from 'axios'
 import { ResourceData } from '../types/SWAPI.types'
+import axios from 'axios'
 
-// Create a new axios instance
+/** New axios instance */
 const instance = axios.create({
 	baseURL: "https://swapi.dev/api",
 	timeout: 10000,
@@ -19,6 +19,9 @@ const get = async <T>(endpoint: string) => {
 	return response.data as T
 }
 
+/**
+ * GET Starships
+ */
 export const getStarships = () => {
 	return get<ResourceData>(`/starships`)
 }

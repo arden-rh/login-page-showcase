@@ -8,8 +8,10 @@ import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
 import StarshipsPage from './pages/StarshipsPage'
 
+/** Protected Route Component */
 import ProtectedRoute  from './components/ProtectedRoute'
 
+/** SASS */
 import './assets/scss/App.scss'
 
 const App = () => {

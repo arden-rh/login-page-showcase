@@ -1,6 +1,6 @@
-import axios from 'axios'
-import { User, LoggedInUser } from '../types/User.types'
 const BASE_URL = "http://localhost:3001"
+import { User, LoggedInUser } from '../types/User.types'
+import axios from 'axios'
 
 /**
  * GET users request
@@ -10,15 +10,19 @@ export const getUsers = async () => {
 	return response.data as User[]
 }
 
-/** POST user login request */
-export const loginUser = async (data: User) => {
-	const response = await axios.post(`${BASE_URL}/login`, data)
+/**
+ * POST create user request
+ */
+export const createUser = async (data: User) => {
+	const response = await axios.post(`${BASE_URL}/users`, data)
 	return response.data as LoggedInUser
 }
 
-/** POST create user request */
-export const createUser = async (data: User) => {
-	const response = await axios.post(`${BASE_URL}/users`, data)
+/**
+ * POST user login request
+ */
+export const loginUser = async (data: User) => {
+	const response = await axios.post(`${BASE_URL}/login`, data)
 	return response.data as LoggedInUser
 }
 

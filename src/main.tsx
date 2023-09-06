@@ -4,6 +4,7 @@ import App from './App'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+/** Query Client */
 const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
